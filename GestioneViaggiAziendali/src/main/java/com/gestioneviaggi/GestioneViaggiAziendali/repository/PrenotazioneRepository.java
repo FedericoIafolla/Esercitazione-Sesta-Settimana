@@ -1,0 +1,7 @@
+package com.gestioneviaggi.GestioneViaggiAziendali.repository;
+
+import com.gestioneviaggi.GestioneViaggiAziendali.model.Prenotazione;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long> {
+}
