@@ -1,5 +1,6 @@
 package com.gestioneviaggi.GestioneViaggiAziendali.service;
 
+import com.gestioneviaggi.GestioneViaggiAziendali.exception.CustomException;
 import com.gestioneviaggi.GestioneViaggiAziendali.model.Dipendente;
 import com.gestioneviaggi.GestioneViaggiAziendali.repository.DipendenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class DipendenteService {
     }
 
     public void deleteById(Long id) {
+        if (!dipendenteRepository.existsById(id)) {
+            throw new CustomException("Dipendente non trovato");
+        }
         dipendenteRepository.deleteById(id);
     }
 }

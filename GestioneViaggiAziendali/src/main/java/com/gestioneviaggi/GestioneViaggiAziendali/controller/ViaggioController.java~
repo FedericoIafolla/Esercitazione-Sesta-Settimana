@@ -8,12 +8,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/viaggi")
 public class ViaggioController {
 
     @Autowired
     private ViaggioService viaggioService;
+
+    @GetMapping
+    public ResponseEntity<List<Viaggio>> getAllViaggi() {
+        return ResponseEntity.ok(viaggioService.findAll());
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Viaggio> getViaggioById(@PathVariable Long id) {

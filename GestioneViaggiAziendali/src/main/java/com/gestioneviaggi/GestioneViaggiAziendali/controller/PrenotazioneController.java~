@@ -34,5 +34,9 @@ public class PrenotazioneController {
         return new ResponseEntity<>(prenotazioneService.save(prenotazione), HttpStatus.CREATED);
     }
 
-    
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletePrenotazione(@PathVariable Long id) {
+        prenotazioneService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
 }
