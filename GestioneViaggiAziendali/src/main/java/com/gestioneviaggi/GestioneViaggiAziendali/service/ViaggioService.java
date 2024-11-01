@@ -26,6 +26,10 @@ public class ViaggioService {
         return viaggioRepository.save(viaggio);
     }
 
+    public void deleteById(Long id) {
+        viaggioRepository.deleteById(id);
+    }
+
     public Viaggio updateStato (Long id, Viaggio.StatoViaggio nuovoStato) {
         Viaggio viaggio = viaggioRepository.findById(id).orElseThrow();
         viaggio.setStato(nuovoStato);
