@@ -1,4 +1,8 @@
 package com.gestioneviaggi.GestioneViaggiAziendali.repository;
 
-public class PrenotazioneRepository {
+import com.gestioneviaggi.GestioneViaggiAziendali.model.Prenotazione;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Long> {
+    boolean existsByDipendenteAndDataRichiesta(Dipendente dipendente, LocalDate dataRichiesta);
 }

@@ -1,0 +1,5 @@
+package com.gestioneviaggi.GestioneViaggiAziendali.service;
+
+public class DipendenteService {
+    
+}
