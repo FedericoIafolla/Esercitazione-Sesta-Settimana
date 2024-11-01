@@ -5,7 +5,9 @@ import com.gestioneviaggi.GestioneViaggiAziendali.model.Prenotazione;
 import com.gestioneviaggi.GestioneViaggiAziendali.repository.PrenotazioneRepository;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -30,7 +32,7 @@ public class PrenotazioneService {
         LocalDate dataRichiesta = prenotazione.getDataRichiesta();
 
         if (prenotazioneRepository.existsByDipendenteAndDataRichiesta(dipendente, dataRichiesta)) {
-            throw new ValidationException("Il dipendente ha già una prenotazione per questa data.");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Il dipendente ha già una prenotazione per questa data.");
         }
 
         return prenotazioneRepository.save(prenotazione);

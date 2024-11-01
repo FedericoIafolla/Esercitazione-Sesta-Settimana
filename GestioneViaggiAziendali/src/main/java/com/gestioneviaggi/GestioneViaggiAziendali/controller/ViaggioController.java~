@@ -35,6 +35,6 @@ public class ViaggioController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteViaggio(@PathVariable Long id) {
         viaggioService.deleteById(id);
-        return new ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build();
     }
 }

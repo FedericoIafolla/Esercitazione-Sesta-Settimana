@@ -6,5 +6,5 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 cloudinary.cloud_name=dtuwqnrfm
-cloudinary.api_key=737999241767736
-cloudinary.api_secret=kTwzdWxNKj_ByMhg6-3tVGsKF3I
+cloudinary.api_key=tuo_api_key
+cloudinary.api_secret=tuo_api_secret
