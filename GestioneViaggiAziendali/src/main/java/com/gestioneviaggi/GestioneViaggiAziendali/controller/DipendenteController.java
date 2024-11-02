@@ -61,7 +61,6 @@ public class DipendenteController {
                     .orElseThrow(() -> new ResourceNotFoundException("Dipendente non trovato"));
             dipendente.setImagineProfiloUrl(imageUrl);
             dipendenteService.save(dipendente);
-
             return ResponseEntity.ok("Immagine caricata con successo: " + imageUrl);
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Errore durante il caricamento dell'immagine");
